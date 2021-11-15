@@ -243,6 +243,12 @@ body {
   justify-content: center;
 }
 
+@media (max-width: 450px) {
+  .albums-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
 .album {
   cursor: pointer;
 }
@@ -430,7 +436,7 @@ body {
   .song-list__item {
     flex-wrap: wrap;
     height: auto;
-    padding: 0px 0px 8px 0px;
+    padding: 0px 5px 8px 0px;
   }
 }
 

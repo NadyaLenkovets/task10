@@ -112,6 +112,9 @@ body {
    grid-template-columns: repeat(auto-fit, minmax(auto, 192px));
    grid-gap: 30px;
    justify-content: center;
+   @media(max-width: 450px) {
+      grid-template-columns: 1fr;
+   }
 }
 .album {
    cursor: pointer;
@@ -287,7 +290,7 @@ body {
    @media (max-width: 565px) {
       flex-wrap: wrap;
       height: auto;
-      padding: 0px 0px 8px 0px;
+      padding: 0px 5px 8px 0px;
    }
    &:hover {
       background: #FFFFFF;
