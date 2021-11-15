@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+   <html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Frontend Everyday - Task10</title>
+
+      <link rel="stylesheet" href="css/style.css">
+
+   </head>
+
+   <body>
+      <div class="wrapper">
+         <main class="main">
+            <div class="main-left">
+               <div class="main-left__top">
+                  <div class="logo">
+                     <a href="index.html">
+                        <img src="img/logo.svg" alt="">
+                     </a>
+                  </div>
+                  <div class="main-left__block">
+                     <div class="main-left__form">
+                        <input type="text" name="search" class="search-input" id="search-input" placeholder="Search">
+                     </div>
+                     <div class="user">
+                        <img src="img/user.png" alt="">
+                     </div>
+                  </div>
+               </div>
+               <div class="albums">
+                  <h1 class="albums__title">Original Soundtrack</h1>
+                  <div class="albums-gallery">
+                     <div class="albums-gallery__item album" data-albumId="album1" data-albumName="one more light">
+                        <div class="album__cover">
+                           <img src="img/covers/mycover1.png" alt="">
+                        </div>
+                        <h2 class="album__title">One More Light</h2>
+                        <h3 class="album__artist">Linkin Park</h3>
+                     </div>
+                     <div class="albums-gallery__item album" data-albumId="album2" data-albumName="a beautiful lie">
+                        <div class="album__cover">
+                           <img src="img/covers/mycover2.png" alt="">
+                        </div>
+                        <h2 class="album__title">A Beautiful Lie</h2>
+                        <h3 class="album__artist">30 Seconds To Mars</h3>
+                     </div>
+                     <div class="albums-gallery__item album" data-albumId="album3" data-albumName="threat to survival">
+                        <div class="album__cover">
+                           <img src="img/covers/mycover3.png" alt="">
+                        </div>
+                        <h2 class="album__title">Threat To Survival</h2>
+                        <h3 class="album__artist">Shinedown</h3>
+                     </div>
+                     <div class="albums-gallery__item album" data-albumId="album4" data-albumName="the sound of madness">
+                        <div class="album__cover">
+                           <img src="img/covers/mycover4.png" alt="">
+                        </div>
+                        <h2 class="album__title">The Sound Of Madness</h2>
+                        <h3 class="album__artist">Shinedown</h3>
+                     </div>
+                     <div class="albums-gallery__item album" data-albumId="album5" data-albumName="immersion">
+                        <div class="album__cover">
+                           <img src="img/covers/mycover5.png" alt="">
+                        </div>
+                        <h2 class="album__title">Immersion</h2>
+                        <h3 class="album__artist">Pendulum</h3>
+                     </div>
+                     <div class="albums-gallery__item album" data-albumId="album6" data-albumName="hybrid theory">
+                        <div class="album__cover">
+                           <img src="img/covers/mycover6.png" alt="">
+                        </div>
+                        <h2 class="album__title">Hybrid Theory</h2>
+                        <h3 class="album__artist">Linkin Park</h3>
+                     </div>
+                     <div class="albums-gallery__item album" data-albumId="album7" data-albumName="minutes to midnight">
+                        <div class="album__cover">
+                           <img src="img/covers/mycover7.png" alt="">
+                        </div>
+                           <h2 class="album__title">Minutes To Midnight</h2>
+                           <h3 class="album__artist">Linkin Park</h3>
+                     </div>
+                     <div class="albums-gallery__item album" data-albumId="album8" data-albumName="dead letters">
+                        <div class="album__cover">
+                           <img src="img/covers/mycover8.png" alt="">
+                        </div>
+                        <h2 class="album__title">Dead Letters</h2>
+                        <h3 class="album__artist">The Rasmus</h3>
+                     </div>
+                     <div class="albums-gallery__item album" data-albumId="album9" data-albumName="perfection is a lie">
+                        <div class="album__cover">
+                           <img src="img/covers/mycover9.png" alt="">
+                        </div>
+                        <h2 class="album__title">Perfection Is A Lie</h2>
+                        <h3 class="album__artist">The Hardkiss</h3>
+                     </div>
+                     <div class="albums-gallery__item album" data-albumId="album10" data-albumName="one-x">
+                        <div class="album__cover">
+                           <img src="img/covers/mycover10.png" alt="">
+                        </div>
+                        <h2 class="album__title">One-X</h2>
+                        <h3 class="album__artist">Three Days Grace</h3>
+                     </div>
+                     <div class="albums-gallery__item album" data-albumId="album11" data-albumName="jealous Gods">
+                        <div class="album__cover">
+                           <img src="img/covers/mycover11.png" alt="">
+                        </div>
+                        <h2 class="album__title">Jealous Gods</h2>
+                        <h3 class="album__artist">Poets Of The Fall</h3>
+                     </div>
+                     <div class="albums-gallery__item album" data-albumId="album12" data-albumName="ultraviolet">
+                        <div class="album__cover">
+                           <img src="img/covers/mycover12.png" alt="">
+                        </div>
+                        <h2 class="album__title">Ultraviolet</h2>
+                        <h3 class="album__artist">Poets Of The Fall</h3>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="main-right">
+               <div class="playing-album hidden">
+                  <div class="playing-album__thumb">
+                     <img class="playing-album__thumb-img" src="img/thumbs/thumb2.png" alt="">
+                  </div>
+                  <div class="playing-album__info">
+                     <h2 class="playing-album__title">Aladdin</h2>
+                     <h3 class="playing-album__artist">Original Motion Picture Soundtrack</h3>
+                     <h4 class="playing-album__genre">OST</h4>
+                  </div>
+               </div>
+               <div class="visual hidden">
+                  <div class="visualizer">
+                     <div class="progress">
+                        <div class="progress__played"></div>
+                     </div>
+                  </div>
+                  <div class="time">
+                     <p class="time__passed">00:00</p>
+                     <p class="time__all">00:00</p>
+                  </div>
+
+                  <!-- =====  main-audio  ===== -->
+                  <audio id="main-audio" src=""></audio>
+
+               </div>
+                <!-- ===== список песен  ===== -->
+               <div class="song-list hidden"></div>
+            </div>
+         </main>
+        
+      </div>
+   
+      
+  
+   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+   <script>
+
+      var firebaseConfig = {
+         apiKey: "AIzaSyBVeuOfo-LzC5fzaHWZ5nBHzcgIKNT08fU",
+         authDomain: "fe-task10.firebaseapp.com",
+         projectId: "fe-task10",
+         storageBucket: "fe-task10.appspot.com",
+         messagingSenderId: "630584986969",
+         appId: "1:630584986969:web:ad54d51015147093059048"
+      };
+      
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      
+   </script>
+   <script src="js/script.js"></script>
+   </body>
+
+   </html>
+
