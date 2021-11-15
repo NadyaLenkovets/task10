@@ -267,78 +267,78 @@ let albumsObj = {
                }
             },
    album5 : {
-      title: "Immersion",
-      artist: "Pendulum",
-      year: 2010,
-      genre: `Drum'n'Bass / Electronic Rock`,
-      thumb: "thumb5.png",
-      songs: {
-         1: {
-            name: "Genesis",
-            duration: "01:10",
-            src: "Pendulum - Immersion/01_genesis.mp3",
-         }, 
-         2: {
-               name: "Salt In the Wounds",
-               duration: "06:39",
-               src: "Pendulum - Immersion/02_salt_in_the_wounds.mp3",
-         },
-         3: {
-               name: "Watercolour",
-               duration: "05:04",
-               src: "Pendulum - Immersion/03_watercolour.mp3",
-         },
-         4: {
-               name: "Set Me On Fire",
-               duration: "05:03",
-               src: "Pendulum - Immersion/04_set_me_on_fire.mp3",
-         },
-         5: {
-               name: "Crush",
-               duration: "04:14",
-               src: "Pendulum - Immersion/05_crush.mp3",
-         },
-         6: {
-               name: "Under the Waves",
-               duration: "04:55",
-               src: "Pendulum - Immersion/06_under_the_waves.mp3",
-         },
-         7: {
-               name: "Immunize (Feat. Liam Howlett)",
-               duration: "04:37",
-               src: "Pendulum - Immersion/07_immunize_feat_liam_howlett_.mp3",
-         },
-         8: {
-               name: "The Island, Pt. I (Dawn)",
-               duration: "05:20",
-               src: "Pendulum - Immersion/08_the_island_pt_i_dawn_.mp3",
-         },
-         9: {
-               name: "The Island, Pt. II (Dusk)",
-               duration: "04:10",
-               src: "Pendulum - Immersion/09_the_island_pt_ii_dusk_.mp3",
-         },
-         10: {
-               name: "Comprachicos",
-               duration: "02:49",
-               src: "Pendulum - Immersion/10_comprachicos.mp3",
-         },
-         11: {
-            name: "The Vulture",
-            duration: "04:03",
-            src: "Pendulum - Immersion/11_the_vulture.mp3",
-         },
-         12: {
-               name: "Witchcraft",
-               duration: "04:13",
-               src: "Pendulum - Immersion/12_witchcraft.mp3",
-         },
-         13: {
-               name: "Self Vs Self (Feat. In Flames)",
-               duration: "04:46",
-               src: "Pendulum - Immersion/13_self_vs_self_feat_in_flames_.mp3",
-         },
-      }
+               title: "Immersion",
+               artist: "Pendulum",
+               year: 2010,
+               genre: `Drum'n'Bass / Electronic Rock`,
+               thumb: "thumb5.png",
+               songs: {
+                  1: {
+                     name: "Genesis",
+                     duration: "01:10",
+                     src: "Pendulum - Immersion/01_genesis.mp3",
+                  }, 
+                  2: {
+                        name: "Salt In the Wounds",
+                        duration: "06:39",
+                        src: "Pendulum - Immersion/02_salt_in_the_wounds.mp3",
+                  },
+                  3: {
+                        name: "Watercolour",
+                        duration: "05:04",
+                        src: "Pendulum - Immersion/03_watercolour.mp3",
+                  },
+                  4: {
+                        name: "Set Me On Fire",
+                        duration: "05:03",
+                        src: "Pendulum - Immersion/04_set_me_on_fire.mp3",
+                  },
+                  5: {
+                        name: "Crush",
+                        duration: "04:14",
+                        src: "Pendulum - Immersion/05_crush.mp3",
+                  },
+                  6: {
+                        name: "Under the Waves",
+                        duration: "04:55",
+                        src: "Pendulum - Immersion/06_under_the_waves.mp3",
+                  },
+                  7: {
+                        name: "Immunize (Feat. Liam Howlett)",
+                        duration: "04:37",
+                        src: "Pendulum - Immersion/07_immunize_feat_liam_howlett_.mp3",
+                  },
+                  8: {
+                        name: "The Island, Pt. I (Dawn)",
+                        duration: "05:20",
+                        src: "Pendulum - Immersion/08_the_island_pt_i_dawn_.mp3",
+                  },
+                  9: {
+                        name: "The Island, Pt. II (Dusk)",
+                        duration: "04:10",
+                        src: "Pendulum - Immersion/09_the_island_pt_ii_dusk_.mp3",
+                  },
+                  10: {
+                        name: "Comprachicos",
+                        duration: "02:49",
+                        src: "Pendulum - Immersion/10_comprachicos.mp3",
+                  },
+                  11: {
+                     name: "The Vulture",
+                     duration: "04:03",
+                     src: "Pendulum - Immersion/11_the_vulture.mp3",
+                  },
+                  12: {
+                        name: "Witchcraft",
+                        duration: "04:13",
+                        src: "Pendulum - Immersion/12_witchcraft.mp3",
+                  },
+                  13: {
+                        name: "Self Vs Self (Feat. In Flames)",
+                        duration: "04:46",
+                        src: "Pendulum - Immersion/13_self_vs_self_feat_in_flames_.mp3",
+                  },
+               }
    },
    album6 : {
       title: "Hybrid Theory",
