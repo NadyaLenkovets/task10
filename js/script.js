@@ -9,7 +9,7 @@ let timePassed = document.querySelector('.time__passed');
 let timeAll = document.querySelector('.time__all');
 let progressBarPlayed = document.querySelector('.progress__played');
 let searchInput = document.getElementById('search-input');
-let collection = document.querySelector('.song-list').children; // живая коллекция песен, добавленных динамически
+let collection = document.querySelector('.song-list').children;
 
 
 
