@@ -292,7 +292,7 @@ body {
 }
 
 .album:hover .album__cover {
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 10px -10px 20px rgba(0, 0, 0, 0.7);
 }
 
 .album.hide {
@@ -300,7 +300,7 @@ body {
 }
 
 .album.active .album__cover {
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 10px -10px 20px rgba(0, 0, 0, 0.7);
 }
 
 .album__cover {
@@ -454,15 +454,27 @@ body {
 }
 
 .back-arrow {
-  width: 15px;
+  width: 20px;
   margin: 0px 4px 0px 0px;
   cursor: pointer;
 }
 
+@media (max-width: 565px) {
+  .back-arrow {
+    width: 30px;
+  }
+}
+
 .forward-arrow {
-  width: 15px;
+  width: 20px;
   margin: 0px 0px 0px 4px;
   cursor: pointer;
+}
+
+@media (max-width: 565px) {
+  .forward-arrow {
+    width: 30px;
+  }
 }
 
 .song-list {

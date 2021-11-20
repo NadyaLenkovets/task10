@@ -148,7 +148,7 @@ body {
    cursor: pointer;
    &:hover {
       & .album__cover {
-         box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+         box-shadow: 10px -10px 20px rgba(0, 0, 0, 0.7);
       }
    }
    &.hide {
@@ -156,7 +156,7 @@ body {
    }
    &.active {
       & .album__cover {
-         box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+         box-shadow: 10px -10px 20px rgba(0, 0, 0, 0.7);
       }
    }
 }
@@ -301,14 +301,20 @@ body {
 
 }
 .back-arrow {
-   width: 15px;
+   width: 20px;
    margin: 0px 4px 0px 0px;
    cursor: pointer;
+   @media(max-width: 565px) {
+      width: 30px;
+   }
 }
 .forward-arrow {
-   width: 15px;
+   width: 20px;
    margin: 0px 0px 0px 4px;
    cursor: pointer;
+   @media(max-width: 565px) {
+      width: 30px;
+   }
 }
 
 
