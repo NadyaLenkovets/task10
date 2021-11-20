@@ -1,16 +1,20 @@
 const downloadUrl = document.querySelector('.url');
 const mainAudio = document.querySelector('#main-audio');
 const playPauseButtons = document.querySelectorAll('.play-pause-button');
+const error = document.querySelector('.error');
+const backArrow = document.querySelector('.back-arrow');
+const forwardArrow = document.querySelector('.forward-arrow');
+const progress = document.querySelector('.progress');
+const progressBarPlayed = document.querySelector('.progress__played');
 let playingAlbumThumb = document.querySelector('.playing-album__thumb-img');
 let playingAlbumTitle = document.querySelector('.playing-album__title');
 let playingAlbumArtist = document.querySelector('.playing-album__artist');
 let playingAlbumGenre = document.querySelector('.playing-album__genre');
 let timePassed = document.querySelector('.time__passed');
 let timeAll = document.querySelector('.time__all');
-let progressBarPlayed = document.querySelector('.progress__played');
 let searchInput = document.getElementById('search-input');
-let collection = document.querySelector('.song-list').children;
-
+let collection = document.querySelector('.song-list').children; // живая коллекция всех песен в открытом альбоме
+let albumSongsCollection; // живая коллекция всех песен в открытом альбоме, создаем при клике на альбом
 
 
 // ===========  Firebase  ===========
@@ -48,19 +52,27 @@ document.addEventListener('click', function(e) {
 })
 
 
-
 // кликом по альбому загружаем список песен
 let albums = document.querySelectorAll('.album');
 albums.forEach(item => {
    item.addEventListener('click', loadSongs);
+   item.addEventListener('click', makeAlbumActive);
 })
 
 
+function makeAlbumActive() {
+   albums.forEach(album => {
+      album.classList.remove('active');
+   })
+   this.classList.add('active');
+}
 
 
 function loadSongs() {
    // показать инфо о текущем альбоме
    showCurrentAlbum();
+   createAlbumSongsCollection(); 
+   songsArray = [];
 
    const songList = document.querySelector('.song-list');
    let albumId = this.getAttribute('data-albumId');
@@ -109,7 +121,13 @@ function loadSongs() {
       `;
 
       songList.insertAdjacentHTML('beforeend', songTemplate);
-   } 
+      createSongsArray(albumsObj[albumId].songs[song].src);
+   }   
+}
+
+
+function createAlbumSongsCollection() {
+   albumSongsCollection = document.querySelector('.song-list').children;
 }
 
 
@@ -139,6 +157,44 @@ function playSong(elem) {
 
    let songSrc = elem.parentNode.nextElementSibling.getAttribute('data-songSrc');
    getUrl(songSrc);
+   checkSongArray(songSrc);
+}
+
+
+// создаем массив с src песен открытого альбома
+let songsArray = [];
+
+function createSongsArray(songSrc) {
+   songsArray.push(songSrc);
+}
+
+let playingSongIndex;
+
+//проверяем, какая песня из массива сейчас играет
+function checkSongArray(songSrc) {
+   playingSongIndex = songsArray.indexOf(songSrc);
+}
+
+// ловим клики на back / forward arrows
+forwardArrow.addEventListener('click', playNextSong);
+backArrow.addEventListener('click', playPrevSong);
+
+
+function playNextSong() {
+   albumSongsCollection[playingSongIndex+1].querySelector('.play-pause-button').click();
+}
+function playPrevSong() {
+   albumSongsCollection[playingSongIndex-1].querySelector('.play-pause-button').click();
+}
+// остановить все воспроизведение, когд азакончится последняя песня
+function stopSongs() {
+   for (let i = 0; i < collection.length; i++) {
+      collection[i].classList.add('paused');
+      collection[i].classList.remove('playing');
+      collection[i].firstElementChild.classList.add('paused');
+      collection[i].firstElementChild.classList.remove('playing');
+   }
+   mainAudio.pause();
 }
 
 
@@ -159,10 +215,6 @@ function playAudio(url) {
 }
 
 
-let items = document.querySelectorAll('.song-list__item');
-// console.log(items);
-
-
 // текущая песня
 mainAudio.addEventListener("timeupdate", (e) => {
 
@@ -175,6 +227,7 @@ mainAudio.addEventListener("timeupdate", (e) => {
    mainAudio.addEventListener("loadeddata", () => {
       // изменяем общую продолжительность песни
       let audioDuration = mainAudio.duration;
+      
       let totalMin = Math.floor(audioDuration / 60);
       let totalSec = Math.floor(audioDuration % 60);
       if (totalSec < 10) {
@@ -190,6 +243,17 @@ mainAudio.addEventListener("timeupdate", (e) => {
       currentSec = `0${currentSec}`;
    }
    timePassed.innerHTML = `${currentMin}:${currentSec}`;
+   if (playingSongIndex != (songsArray.length-1)) {
+      if (currentTime == mainAudio.duration) {
+         console.log('конец песни');
+         playNextSong();
+      }
+   } else {
+      if (currentTime == mainAudio.duration) {
+         console.log('конец альбома');
+         stopSongs();
+      }
+   } 
 })
 
 
@@ -198,7 +262,9 @@ mainAudio.addEventListener("timeupdate", (e) => {
 searchInput.addEventListener('keydown', function(event) {
    if (event.code == 'Enter' || event.code == 'NumpadEnter') {
       const albums = document.querySelectorAll('.album');
+      
       let searchValue = searchInput.value.toLowerCase();
+      let i = 0;
 
       albums.forEach(album => {
          if (album.classList.contains('hide')) {
@@ -209,11 +275,28 @@ searchInput.addEventListener('keydown', function(event) {
          
          if (dataAlbumName.slice(0, searchValue.length) !== searchValue) {
             album.classList.add('hide');
+            i++;
          }
       })
+
+      if (albums.length == i) {
+         error.classList.add('show');
+         setTimeout(hideError, 2000);
+      }
    }
 })
 
 
+function hideError() {
+   error.classList.remove('show');
+}
 
 
+// перемотка по прогресс бару
+progress.addEventListener('click', function(e) {
+   let progressWidthVal = progress.clientWidth;
+   let clickedOffsetX = e.offsetX;
+   let songDuration = mainAudio.duration;
+
+   mainAudio.currentTime = (clickedOffsetX / progressWidthVal) * songDuration;
+})
